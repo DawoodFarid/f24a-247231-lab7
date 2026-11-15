@@ -34,16 +34,29 @@ function App() {
 
   const [name, setName] = useState("");
   const [selectedGuest, setSelectedGuest] = useState(null);
+  const [message, setMessage] = useState("");
 
   function findGuest(event) {
     event.preventDefault();
+
+    if (name.trim() === "") {
+      setSelectedGuest(null);
+      setMessage("Type a name");
+      return;
+    }
 
     const found = guests.find(
       (guest) =>
         guest.name.toLowerCase() === name.trim().toLowerCase()
     );
 
-    setSelectedGuest(found || null);
+    if (found) {
+      setSelectedGuest(found);
+      setMessage("");
+    } else {
+      setSelectedGuest(null);
+      setMessage("Not on the list");
+    }
   }
 
   return (
@@ -77,7 +90,7 @@ function App() {
           )}
         </div>
 
-        <p className="message"></p>
+        <p className="message">{message}</p>
       </main>
 
       <footer>
