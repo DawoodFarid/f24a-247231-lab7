@@ -33,9 +33,17 @@ function App() {
   ];
 
   const [name, setName] = useState("");
+  const [selectedGuest, setSelectedGuest] = useState(null);
 
   function findGuest(event) {
     event.preventDefault();
+
+    const found = guests.find(
+      (guest) =>
+        guest.name.toLowerCase() === name.trim().toLowerCase()
+    );
+
+    setSelectedGuest(found || null);
   }
 
   return (
@@ -60,7 +68,14 @@ function App() {
           <button type="submit">Find</button>
         </form>
 
-        <div className="card"></div>
+        <div className="card">
+          {selectedGuest && (
+            <>
+              <h3>{selectedGuest.name}</h3>
+              <p>Seat: {selectedGuest.seat}</p>
+            </>
+          )}
+        </div>
 
         <p className="message"></p>
       </main>
