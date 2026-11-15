@@ -66,3 +66,30 @@ footer {
   color: white;
   padding: 18px;
 }
+
+.search {
+  margin: 30px auto 20px;
+}
+
+.search input {
+  width: 250px;
+  padding: 12px;
+  border: 2px solid green;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.card {
+  width: 280px;
+  min-height: 120px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px #00000015;
+}
+
+.message {
+  min-height: 25px;
+}
+

@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import "./App.css";
 
 function Guest({ name, seat }) {
@@ -31,6 +32,8 @@ function App() {
     { name: "Hina", seat: 2 }
   ];
 
+  const [name, setName] = useState("");
+
   return (
     <div className="app">
       <header>
@@ -39,7 +42,22 @@ function App() {
 
       <main>
         <h2>Guest List</h2>
+
         <Wall guests={guests} />
+
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Enter guest name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+
+        <div className="card">
+        </div>
+
+        <p className="message"></p>
       </main>
 
       <footer>
