@@ -1,0 +1,42 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f7f0;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+header {
+  background-color: green;
+  padding: 25px;
+}
+
+header h1 {
+  color: white;
+}
+
+main {
+  flex: 1;
+  padding: 40px;
+}
+
+main h2 {
+  color: green;
+}
+
+footer {
+  background-color: green;
+  color: white;
+  padding: 18px;
+}
