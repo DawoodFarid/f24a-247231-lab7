@@ -10,7 +10,27 @@ function Guest({ name, seat }) {
   );
 }
 
+function Wall({ guests }) {
+  return (
+    <div className="guest-list">
+      {guests.map((guest) => (
+        <Guest
+          key={guest.name}
+          name={guest.name}
+          seat={guest.seat}
+        />
+      ))}
+    </div>
+  );
+}
+
 function App() {
+  const guests = [
+    { name: "Sara", seat: 4 },
+    { name: "Omar", seat: 9 },
+    { name: "Hina", seat: 2 }
+  ];
+
   return (
     <div className="app">
       <header>
@@ -19,12 +39,7 @@ function App() {
 
       <main>
         <h2>Guest List</h2>
-
-        <div className="guest-list">
-          <Guest name="Sara" seat={4} />
-          <Guest name="Omar" seat={9} />
-          <Guest name="Hina" seat={2} />
-        </div>
+        <Wall guests={guests} />
       </main>
 
       <footer>
