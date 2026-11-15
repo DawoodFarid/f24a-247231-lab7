@@ -40,7 +40,6 @@ function App() {
     event.preventDefault();
 
     if (name.trim() === "") {
-      setSelectedGuest(null);
       setMessage("Type a name");
       return;
     }
