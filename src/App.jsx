@@ -34,6 +34,10 @@ function App() {
 
   const [name, setName] = useState("");
 
+  function findGuest(event) {
+    event.preventDefault();
+  }
+
   return (
     <div className="app">
       <header>
@@ -45,17 +49,18 @@ function App() {
 
         <Wall guests={guests} />
 
-        <div className="search">
+        <form className="search" onSubmit={findGuest}>
           <input
             type="text"
             placeholder="Enter guest name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-        </div>
 
-        <div className="card">
-        </div>
+          <button type="submit">Find</button>
+        </form>
+
+        <div className="card"></div>
 
         <p className="message"></p>
       </main>
